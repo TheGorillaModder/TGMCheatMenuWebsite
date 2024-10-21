@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TGM Cheat Menu</title>
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/48/2c/51/482c5158bf7550c77a73259bf8f274f2.gif');
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            height: 95vh;
+        }
+
+        h1 {
+            margin: 50px;
+        }
+
+        h3 {
+            margin: 15px;
+            color: white;
+        }
+
+        .topWindowLine {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            border-radius: 10000px;
+            background-color: black;
+            width: 99vw;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            margin-top: auto;
+            margin-bottom: auto;
+            flex-direction: column;
+        }
+
+        button {
+            border-radius: 10000px;
+            background-color: red;
+            padding: 10px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.25s;
+        }
+
+            button:hover {
+                background-color: #900;
+            }
+    </style>
+</head>
+<body>
+    <div class="topWindowLine" id="topLine">
+        <h3>TGM Cheat Menu</h3>
+        <button onclick="switchPages('Home')">Home</button>
+        <button onclick="switchPages('Download')">Download</button>
+        <button onclick="switchPages('Credits')">Credits</button>
+        <button onclick="switchPages('Socials')">Socials</button>
+    </div>
+    <div class="container" id="contentContainer">
+        <h1>Welcome to the TGM Cheat Menu!</h1> 
+        <h2>The more people suggest the more mods and the more people in <span style="color: blue;" class="clickable" onclick="switchPages('Credits');">credits</span>!</h2>
+        <h4><span style="color: red;">DISCLAIMER: ANY BANS AQUIRED FROM THIS MENU ARE NOT MY FAULT, YOU USED THE MENU SO YOU ARE RESPONSABLE FOR YOUR BANS!</span></h4>
+    </div>
+    <script>
+        function switchPages(pageName) {
+            let content = '';
+            switch (pageName) {
+                case 'Home':
+                    content = `<h1>Welcome to the TGM Cheat Menu!</h1> <h2>The more people suggest the more mods and the more people in 
+                    <span style="color: blue;" class="clickable" onclick="switchPages('Credits');">credits</span>!</h2>
+                    <h4><span style="color: red;">DISCLAIMER: ANY BANS AQUIRED FROM THIS MENU ARE NOT MY FAULT, YOU USED THE MENU SO YOU ARE RESPONSABLE FOR YOUR BANS!</span></h4>`;
+                    break;
+                case 'Download':
+                    content = `<h1>Download the latest version of TGM Cheat Menu!</h1> <button>Download (NOT-RELEASED-YET)</button>`;
+                    break;
+                case 'Credits':
+                    content = `<h1>Credits</h1><h4>Everything was created by me! Some things may have been suggested by the community though. To any of those who have suggestions, go to my discord and suggest away and you can be added to
+                    this page (if you want) along with the mod name you suggested</h4>`;
+                    break;
+                case 'Socials':
+                    content = `<h1>Subscribe to my youtube and join the discord!</h1>
+                    <h2><a href="https://www.youtube.com/@thegorillamodder" target="_blank">Youtube</a></h2>
+                    <h2><a href="https://discord.gg/epnk2gB22Q" target="_blank">Discord</a></h2>`;
+                    break;
+                default:
+                    content = `<h1>Welcome to the TGM Cheat Menu!</h1>`;
+                    break;
+            }
+            document.getElementById('contentContainer').innerHTML = content;
+        }
+    </script>
+</body>
+</html>
